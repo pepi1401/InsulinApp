@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="mk">
+    <!-- workouts.html -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://ads.google.com https://adservice.google.com https://*.googlesyndication.com;
+    connect-src 'self' https://pagead2.googlesyndication.com https://adservice.google.com https://*.adtrafficquality.google https://googleads.g.doubleclick.net;
+    frame-src 'self' https://www.youtube.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;
+    img-src 'self' https://pagead2.googlesyndication.com https://*.googlesyndication.com data:;
+">
+ <title data-key="workouts_title">Тренинзи за инсулинска чувствителност</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .workout-card {
+            background: #000000;
+            border-radius: 15px;
+            padding: 2px;
+            margin: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #696b6c;
+            cursor: pointer;
+        }
+       
+        .workout-type {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        .workout-content { display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px; }
+        .workout-content.active { display: block; }
+        .benefit-tag { background: #e8f4fd; color: #3498db; padding: 2px 8px; border-radius: 5px; font-size: 0.8rem; }
+    </style>
+</head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+<script>
+    // Инициализация на рекламната мрежа
+    window.adsbygoogle = window.adsbygoogle || [];
+    
+    // Създаваме глобален обект за Reward видеото, който weight.js ще търси
+    window.rewardedAd = {
+        loaded: false,
+        isLoaded: function() { return this.loaded; },
+        show: function() { 
+            console.log("Показване на видео реклама...");
+            // Тук се извиква функцията на Google за показване
+        },
+        on: function(event, callback) {
+            this["on" + event] = callback;
+        }
+    };
+
+    // Тестова функция за симулация (докато активирате истински AdMob)
+    // Изтрийте това, когато сложите истинския код на Google
+    setTimeout(() => { window.rewardedAd.loaded = true; }, 2000);
+</script>
+<body>
+
+<button id="back-button" onclick="window.location.href='index.html'">⬅ Назад</button> <br> <br>
+
+<!--ZA SNIMKATA=========== https://img.youtube.com/vi/ID_НА_ВИДЕОТО/hqdefault.jpg.-->
+
+<section id="workouts" class="screen active" >
+    <h1 data-key="workouts_header" style="text-align: center;">💪 Тренинзи</h1>
+    
+    <div class="workouts-grid"> 
+        <!-- 1 -->
+       <div class="workout-card" onclick="toggleWorkout(this)">
+        <!-- za snimkata prevy -->
+            <div class="workout-placeholder">
+                <img src="https://img.youtube.com/vi/tCnTWrfWrw0/mqdefault.jpg" alt="Preview">
+                <div class="play-button">▶</div>
+            </div>
+                <!-- za videoto -->
+            <div class="workout-content">
+                <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden; border-radius:15px; background:#000;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                        src="https://www.youtube.com/embed/tCnTWrfWrw0?autoplay=1&mute=1&loop=1&playlist=tCnTWrfWrw0&controls=0" 
+                        allow="autoplay">
+                    </iframe>
+                </div>
+                <!-- <p>Описание на упражнението...</p> -->
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="workout-card" onclick="toggleWorkout(this)">
+             <!-- za snimkata prevy -->
+            <div class="workout-placeholder">
+                <img src="https://img.youtube.com/vi/K7PSZaguNlg/mqdefault.jpg" alt="Preview">
+                <div class="play-button">▶</div>
+            </div>
+                <!-- za videoto -->
+            
+            <div class="workout-content">
+                <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden; border-radius:20px; background:#000;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; " 
+                        src="https://www.youtube.com/embed/K7PSZaguNlg?autoplay=1&mute=1&loop=1&playlist=K7PSZaguNlg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <!-- 3 -->
+         <div class="workout-card" onclick="toggleWorkout(this)">
+        <!-- za snimkata prevy -->
+            <div class="workout-placeholder">
+                <img src="https://img.youtube.com/vi/kaPAPMHvKO0/mqdefault.jpg" alt="Preview">
+                <div class="play-button">▶</div>
+            </div>
+                <!-- za videoto -->
+            <div class="workout-content">
+                <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden; border-radius:15px; background:#000;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                        src="https://www.youtube.com/embed/kaPAPMHvKO0?autoplay=1&mute=1&loop=1&playlist=kaPAPMHvKO0&controls=0" 
+                        allow="autoplay">
+                    </iframe>
+                </div>
+                <!-- <p>Описание на упражнението...</p> -->
+            </div>
+        </div>
+        <!-- 4 -->
+         <div class="workout-card" onclick="toggleWorkout(this)">
+        <!-- za snimkata prevy -->
+            <div class="workout-placeholder">
+                <img src="https://img.youtube.com/vi/RCJN6uXOjj8/mqdefault.jpg" alt="Preview">
+                <div class="play-button">▶</div>
+            </div>
+                <!-- za videoto -->
+            <div class="workout-content">
+                <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden; border-radius:15px; background:#000;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                        src="https://www.youtube.com/embed/RCJN6uXOjj8?autoplay=1&mute=1&loop=1&playlist=RCJN6uXOjj8&controls=0" 
+                        allow="autoplay">
+                    </iframe>
+                </div>
+                <!-- <p>Описание на упражнението...</p> -->
+            </div>
+        </div>
+        <!-- 5 -->
+          <!-- <div class="workout-card" onclick="toggleWorkout(this)">
+        
+            <div class="workout-placeholder">
+                <img src="https://img.youtube.com/vi/===========/mqdefault.jpg" alt="Preview">
+                <div class="play-button">▶</div>
+            </div>
+                
+            <div class="workout-content">
+                <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden; border-radius:15px; background:#000;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                        src="https://www.youtube.com/embed/2222222222?autoplay=1&mute=1&loop=1&playlist=2222222222&controls=0" 
+                        allow="autoplay">
+                    </iframe>
+                </div>
+                < <p>Описание на упражнението...</p> 
+            </div>
+        </div> 
+        <!-- 6 -->
+         
+    </div>
+ </section>
+
+<script type="module">
+    import { changeLanguage } from './languages.js';
+    import { watchWorkout } from './workouts.js';
+
+    // 1. Инициализация при зареждане на страницата
+    window.onload = function() {
+        const savedLang = localStorage.getItem("lang") || "mk";
+        if (typeof changeLanguage === 'function') {
+            changeLanguage(savedLang);
+        }
+    };
+
+    // 2. Основна функция за клик върху тренировка
+    window.toggleWorkout = function(cardElement) {
+        console.log("Функцията се задейства!");
+
+        // Отчитаме гледане САМО ако отваряме нова карта
+        const isExpanded = cardElement.classList.contains('expanded');
+        
+        if (!isExpanded) {
+            if (typeof watchWorkout === 'function') {
+                watchWorkout(); // Тук се брои гледането
+            }
+        }
+
+        // Логика за затваряне/отваряне
+        document.querySelectorAll('.workout-card').forEach(card => {
+            card.classList.remove('expanded');
+        });
+
+        if (!isExpanded) {
+            cardElement.classList.add('expanded');
+            setTimeout(() => {
+                cardElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+    };
+
+    window.goToDashboard = function() {
+        window.location.href = "index.html";
+    };
+</script>
+<!-- REKLAMA -->
+ <div id="ad-container" style="width: 100%; text-align: center; margin: 20px 0; padding: 10px; background: #fff; border-radius: 15px; border: 1px dashed #ccc;">
+        <p style="font-size: 10px; color: #999; margin-bottom: 5px;">РЕКЛАМА</p>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="bg" id="htmlTag">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="food">Храна & Глюкоза</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="back-button" onclick="window.location.href='index.html'">⬅ Назад</button>
+    <br><br>
+
+    <section class="screen active">
+        <h1 data-key="food">Храна & Глюкоза</h1>
+        <p data-key="food_intro">Тук ще намерите информация за това как различните храни влияят на нивата на глюкоза в кръвта и как да ги управлявате ефективно.</p>
+
+        <div class="card" onclick="toggleText('t01')" style="cursor:pointer;">
+            <h3 data-key="gi_title">Гликемичен индекс (GI)</h3>
+            <p data-key="gi_desc">Гликемичният индекс измерва колко бързо дадена храна повишава нивата на глюкоза в кръвта. Храни с нисък GI (55 или по-малко) са по-добри за стабилна захар.</p>
+            <div id="t01" class="hidden">
+                <h4 data-key="gi_examples">Примери за храни с нисък GI</h4>
+                <ul>
+                    <li><b data-key="gi_veg_title">1. Зеленчуци (Почти всички несъдържащи нишесте)</b></li>
+                    <li data-key="gi_veg_1">Повечето зелени зеленчуци имат изключително нисък ГИ (често под 15).</li>
+                    <li data-key="gi_veg_2">Листни зеленчуци: Спанак, маруля, кейл, лапад.</li>
+                    <li data-key="gi_veg_3">Кръстоцветни: Броколи, карфиол, брюкселско зеле, обикновено зеле.</li>
+                    <li data-key="gi_veg_4">Други: Тиквички, краставици, патладжан, чушки, домати, аспержи.</li>
+
+                    <li><b data-key="gi_fruit_title">2. Плодове</b></li>
+                    <li data-key="gi_fruit_desc">Въпреки че съдържат захари, много плодове са богати на фибри, което забавя усвояването им.</li>
+                    <li data-key="gi_fruit_1">Горски плодове: Ягоди, малини, боровинки, къпини (те са шампионите тук).</li>
+                    <li data-key="gi_fruit_2">Костилкови и други: Череши, вишни, ябълки, круши, праскови, кайсии.</li>
+                    <li data-key="gi_fruit_3">Цитруси: Грейпфрут, портокали.</li>
+
+                    <li><b data-key="gi_legumes_title">3. Бобови култури (Отличен източник на протеин и фибри)</b></li>
+                    <li data-key="gi_legumes_desc">Това са едни от най-добрите храни за стабилна захар.</li>
+                    <li data-key="gi_legumes_1">Леща: Зелена, кафява или червена.</li>
+                    <li data-key="gi_legumes_2">Нахут: Включително под формата на хумус (без добавена захар).</li>
+                    <li data-key="gi_legumes_3">Боб: Черен боб, шарен боб, бял боб.</li>
+                    <li data-key="gi_legumes_4">Грах: Пресен или замразен.</li>
+
+                    <li><b data-key="gi_grains_title">4. Зърнени и пълнозърнести храни</b></li>
+                    <li data-key="gi_grains_desc">Тук е важно да се избягват рафинираните (бели) продукти.</li>
+                    <li data-key="gi_grains_1">Овесени ядки: Но само цели (steel-cut) или едри ядки.</li>
+                    <li data-key="gi_grains_2">Ечемик и елда: Страхотни алтернативи на ориза.</li>
+                    <li data-key="gi_grains_3">Киноа: Богат на протеини псевдозърнест продукт.</li>
+
+                    <li><b data-key="gi_nuts_title">5. Ядки и семена</b></li>
+                    <li data-key="gi_nuts_desc">Ядките и семената са богати на здравословни мазнини, протеини и фибри.</li>
+                    <li data-key="gi_nuts_1">Орехи, бадеми, лешници, шамфъстък.</li>
+                    <li data-key="gi_nuts_2">Семена: Чиа, ленено семе, тиквени и слънчогледови семки.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleText('t02')" style="cursor:pointer;">
+            <h3 data-key="manage_title">Как да управляваме глюкозата чрез хранене</h3>
+            <p data-key="manage_desc">Комбинирайте въглехидрати с протеини и здравословни мазнини за стабилни нива на глюкоза.</p>
+            <div id="t02" class="hidden">
+                <p><b data-key="order_title">1. Правилната подредба на храните (Glucose Trick)</b></p>
+                <p data-key="order_desc">Променете реда, в който ядете, за да намалите пика до 75%:</p>
+                <ul>
+                    <li data-key="order_1">Първо: Фибри (Салата, броколи, зеленчуци).</li>
+                    <li data-key="order_2">Второ: Протеини и мазнини (Месо, риба, яйца, ядки).</li>
+                    <li data-key="order_3">Накрая яжте въглехидратите (ориз, картофи, хляб, плодове).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleText('t03')" style="cursor:pointer;">
+            <h3 data-key="dressed_title">„Облечете“ въглехидратите си</h3>
+            <p data-key="dressed_desc">Никога не яжте въглехидрати „голи“ (сами по себе си).</p>
+            <div id="t03" class="hidden">
+                <h4 data-key="mech_title">Механизмът на забавянето</h4>
+                <ul>
+                    <li data-key="mech_1"><b>Физическа бариера (Фибри):</b> Фибрите пречат на бързото усвояване на захарите.</li>
+                    <li data-key="mech_2"><b>Хормонален отговор:</b> Тялото изпраща сигнал да се забави темпото.</li>
+                    <li data-key="mech_3"><b>Ензимна конкуренция:</b> Тялото се фокусира върху протеините и мазнините.</li>
+                </ul>
+                <h4 data-key="result_title">Резултатът: „Плато“ вместо „Връх“</h4>
+                <p data-key="result_desc">Глюкозата навлиза в кръвта плавно като кротка река.</p>
+                <h4 data-key="example_title">Практически пример:</h4>
+                <ul>
+                    <li data-key="example_bad">Лош вариант: Бяла франзела с мармалад.</li>
+                    <li data-key="example_good">Добър вариант: Пълнозърнеста филийка с авокадо и яйце.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleText('t04')" style="cursor:pointer;">
+            <h3 data-key="vinegar_title">Силата на оцета</h3>
+            <p data-key="vinegar_desc">Една супена лъжица ябълков оцет във вода преди ядене притъпява пика.</p>
+            <div id="t04" class="hidden">
+                <ul>
+                    <li data-key="vinegar_desc">Оцетната киселина забавя ензимите, разграждащи нишестето.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleText('t05')" style="cursor:pointer;">
+            <h3 data-key="movement_title">Движение след хранене</h3>
+            <p data-key="movement_desc">Мускулите са най-големият консуматор на глюкоза. Дори 15-30 мин. ходене помагат.</p>
+            <div id="t05" class="hidden">
+                <h4 data-key="move_rules">„Златните правила“ за движение</h4>
+                <ul>
+                    <li data-key="move_1">Прозорецът от 60-90 минути: Най-добре веднага след хранене.</li>
+                    <li data-key="move_2">Продължителност: 10-15 минути са достатъчни.</li>
+                    <li data-key="move_ideas">Практични идеи:</li>
+                    <li data-key="move_soleus">Повдигане на пети от седеж (Soleus push-ups).</li>
+                    <li data-key="move_stairs">Изкачване на стълби.</li>
+                    <li data-key="move_home">Домакинска работа или клякания.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleText('t06')" style="cursor:pointer;">
+            <h3 data-key="smart_title">Избирайте „умни“ въглехидрати</h3>
+            <p data-key="smart_desc">Заменяйте рафинираните продукти с техни алтернативи:</p>
+            <div id="t06" class="hidden">
+                <ul>
+                    <li data-key="smart_1">Бял ориз &rarr; Киноа или черен ориз.</li>
+                    <li data-key="smart_2">Бял хляб &rarr; Пълнозърнест или ръжен.</li>
+                    <li data-key="smart_3">Картофено пюре &rarr; Пюре от карфиол.</li>
+                    <li data-key="smart_4">Плодови сокове &rarr; Цели плодове.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+</section>
+
+    <script type="module">
+        import { translations } from './languages.js';
+
+        // 1. Универсална функция за превод
+        window.applyTranslations = function() {
+            const lang = localStorage.getItem("lang") || "bg";
+            const langData = translations[lang];
+            if (!langData) return;
+
+            document.querySelectorAll("[data-key]").forEach(el => {
+                const key = el.getAttribute("data-key");
+                if (langData[key]) {
+                    el.innerHTML = langData[key];
+                }
+            });
+        };
+
+        // 2. Функция за отваряне/затваряне на картите
+        window.toggleText = function(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                const isHidden = el.style.display === "none";
+                el.style.display = isHidden ? "block" : "none";
+            }
+        };
+
+        // 3. Стартиране при зареждане
+        document.addEventListener("DOMContentLoaded", () => {
+            window.applyTranslations();
+            
+            // Първоначално скриваме всички под-секции (t01, t02...)
+            document.querySelectorAll('.card > div').forEach(div => {
+                if (div.id && div.id.startsWith('t')) {
+                    div.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <script type="module" src="languages.js?v=1.1"></script>
+</body>
+</html>
+

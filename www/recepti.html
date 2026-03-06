@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://cdn.jsdelivr.net https://unpkg.com https://pagead2.googlesyndication.com https://adservice.google.com https://ep2.adtrafficquality.google https://googleads.g.doubleclick.net;">
+    <title>Рецепти - Инсулинова Резистентност</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .recipe-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .recipe-content { display: none; margin-top: 15px; line-height: 1.6; }
+        .recipe-content.active { display: block; }
+        .gi-low { color: #27ae60; font-weight: bold; }
+        #back-button { margin: 15px; padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer; background: #eee; font-weight: bold; }
+    </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];
+        // Глобален обект за реклами (симулация)
+        window.rewardedAd = {
+            loaded: true,
+            isLoaded: function() { return this.loaded; },
+            show: function() { console.log("Показване на видео..."); },
+            on: function(event, callback) { this["on" + event] = callback; }
+        };
+    </script>
+</head>
+
+<body>
+
+<button id="back-button" onclick="window.location.href='index.html'">⬅ Назад</button>
+<br>
+<br>
+<section class="screen active">
+    <h1 data-key="recipes_title">🥗 Рецепти за стабилна глюкоза</h1>
+
+    <div class="recipe-card" onclick="toggleRecipe('r1')">
+    <h3 data-key="r1_name">🍳 Омлет със спанак и авокадо</h3>
+    
+    <img src="images/omlet.png" 
+         alt="Омлет със спанак" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+
+    <div class="recipe-meta">
+        <span>🔥 <span data-key="kcal">Kcal</span>: 350</span>
+        <span>🥩 <span data-key="prot">Прот</span>: 22g</span>
+        <span>📉 GI: <span class="gi-low" data-key="gi_low">Нисък</span></span>
+    </div>
+    
+    <div id="r1" class="recipe-content">
+        <h4 data-key="ingredients">Продукти:</h4>
+        <p data-key="r1_ing">3 яйца, шепа спанак, 1/2 авокадо, малко сирене, зехтин.</p>
+        <h4 data-key="instructions">Приготвяне:</h4>
+        <p data-key="r1_steps">Задушете спанака в зехтина, добавете разбитите яйца. Сервирайте с нарязано авокадо отстрани.</p>
+    </div>
+</div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r2')">
+        <h3 data-key="r2_name">🐟 Сьомга със зелени аспержи</h3>
+        <img src="images/sjomga.png" 
+         alt="Сьомга със зелени аспержи" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            
+            <span>🔥 420 kcal</span>
+            <span>🥩 35g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low1">Много нисък</span></span>
+        </div>
+        <div id="r2" class="recipe-content">
+            <h4 data-key="ingredients">Продукти:</h4>
+            <p data-key="r2_ing">Филе от сьомга, връзка аспержи, лимон, чесън, зехтин.</p>
+            <h4 data-key="instructions">Приготвяне:</h4>
+            <p data-key="r2_steps">Печете сьомгата и аспержите на фурна (200°C) за 15-20 мин с чесън и лимон.</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r3')">
+        <h3 data-key="r3_name">🥗 Салата с киноа </h3>
+        <img src="images/kinoa.png" 
+         alt="Салата с киноа" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            
+            <span>🔥 300 kcal</span>
+            <span>🥩 7g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low2">Среден</span></span>
+        </div>
+        <div id="r3" class="recipe-content">
+            <h4 data-key="r3_desc">Порция</h4>
+
+            <p data-key="r3_0_desc">120 г варена киноа</p>
+            <p data-key="r3_1_desc">домат</p>
+            <p data-key="r3_2_desc">краставица</p>
+            <p data-key="r3_3_desc">магданоз</p>
+            <p data-key="r3_4_desc">1 супена лъжица зехтин</p>
+            <p data-key="r3_5_desc">лимонов сок, сол</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r8')">
+        <h3 data-key="r8_name">🥗 Салата с нахут</h3>
+        <img src="images/naut.png" 
+         alt="Салата с нахут" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            <h4 data-key="r8_desc">Порция</h4>
+            
+            <span>🔥 380 kcal</span>
+            <span>🥩 12g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low2">Среден/Нисък</span></span>
+        </div>
+
+        <div id="r8" class="recipe-content">
+            <p data-key="r8_0_desc">150 г варен нахут</p>
+            <p data-key="r8_1_desc">домати</p>
+            <p data-key="r8_2_desc">лук</p>
+            <p data-key="r8_3_desc">магданоз</p>
+            <p data-key="r8_4_desc">пипер</p>
+            <p data-key="r8_5_desc">лимонов сок, сол</p>
+            <p data-key="r8_6_desc">1 супена лъжица зехтин</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r4')">
+        <h3 data-key="r4_name">🍗 Пилешко с броколи и сусам</h3>
+        <img src="images/pile_brokoli.png" 
+         alt="Пилешко с броколи и сусам" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            
+            <span>🔥 340 kcal</span>
+            <span>🥩 38g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low">Нисък</span></span>
+        </div>
+        <div id="r4" class="recipe-content">
+            <h4 data-key="ingredients">Продукти:</h4>
+            <p data-key="r4_ing">200г пилешко филе, 300г броколи, соев сос (без захар), джинджифил, сусам.</p>
+            <h4 data-key="instructions">Приготвяне:</h4>
+            <p data-key="r4_steps">Запържете пилешкото на кубчета, добавете броколите и малко вода под капак. Накрая овкусете със соев сос и сусам.</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r5')">
+        <h3 data-key="r5_name">🥣 Чиа пудинг с горски плодове</h3>
+       <img src="images/cija_puding.png" 
+         alt="Чиа пудинг с горски плодове" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            
+            <span>🔥 280 kcal</span>
+            <span>🥩 8g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low">Нисък</span></span>
+        </div>
+        <div id="r5" class="recipe-content">
+            <h4 data-key="ingredients">Продукти:</h4>
+            <p data-key="r5_ing">3 с.л. чиа, 200мл бадемово мляко (неподсладено), ванилия, шепа боровинки.</p>
+            <h4 data-key="instructions">Приготвяне:</h4>
+            <p data-key="r5_steps">Смесете чиата с млякото и оставете в хладилник за 4 часа. Гарнирайте с плодовете (боровинките имат най-нисък GI).</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r7')">
+        <h3 data-key="r7_name">🥩 Телешко с карфиолено пюре</h3>
+        <img src="images/telesko_karfiol.png" 
+         alt="Телешко с карфиолено пюре" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            
+            <span>🔥 450 kcal</span>
+            <span>🥩 40g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low1">Много нисък</span></span>
+        </div>
+        <div id="r7" class="recipe-content">
+            <h4 data-key="ingredients">Продукти:</h4>
+            <p data-key="r7_ing">Телешка пържола, половин глава карфиол, малко масло, черен пипер.</p>
+            <h4 data-key="instructions">Приготвяне:</h4>
+            <p data-key="r7_steps">Сварете карфиола и го блендирайте с малко масло (замества картофеното пюре). Изпечете пържолата на тиган или скара.</p>
+        </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleRecipe('r9')">
+        <h3 data-key="r9_name">🥗 Гръцка салата с леща</h3>
+        <img src="images/grcka_sal_lekja.png" 
+         alt="Гръцка салата с леща" 
+         style="width: 100%; height: auto; border-radius: 20px; display: block;">
+        <div class="recipe-meta">
+            <span>🔥 280 kcal</span>
+            <span>🥩 12g Prot</span>
+            <span>📉 GI: <span class="gi-low" data-key="gi_low">Нисък</span></span>
+        </div>
+        <div id="r9" class="recipe-content">
+            <h4 data-key="r9_desc">Порция</h4>
+            <p data-key="r9_0_desc">120 г варена леща</p>
+            <p data-key="r9_1_desc">домат</p>
+            <p data-key="r9_2_desc">краставица</p>
+            <p data-key="r9_3_desc">пипер</p>
+            <p data-key="r9_4_desc">5–6 маслини</p>
+            <p data-key="r9_5_desc">40 г сирене (фета или бяло)</p>
+            <p data-key="r9_6_desc">1 супена лъжица зехтин</p>
+            <p data-key="r9_7_desc">риган, сол, лимон / оцет</p>
+           
+        </div>
+    </div>
+
+</section>
+
+<script type="module">
+    import { translations } from './languages.js';
+
+    // 1. Функция за превод
+    window.applyTranslations = function() {
+        const lang = localStorage.getItem("lang") || "bg";
+        const langData = translations[lang];
+        if (!langData) return;
+
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (langData[key]) {
+                // Използваме textContent за сигурност, освен ако нямаш HTML тагове в преводите
+                el.innerHTML = langData[key];
+            }
+        });
+    };
+
+    // 2. Отваряне/затваряне на рецепта
+    window.toggleRecipe = function(id) {
+        const content = document.getElementById(id);
+        if (content) {
+            // Затваряме всички други отворени рецепти (опционално, за по-изчистен вид)
+            // document.querySelectorAll('.recipe-content').forEach(el => {
+            //    if(el.id !== id) el.classList.remove('active');
+            // });
+            content.classList.toggle('active');
+        }
+    };
+
+    // 3. Стартиране при зареждане (по-стабилният вариант)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', window.applyTranslations);
+    } else {
+        window.applyTranslations();
+    }
+</script>
+
+<script type="module" src="languages.js?v=1.1"></script>
+
+</body>
+</html>

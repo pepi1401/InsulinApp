@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="bg" id="htmlTag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Съвети и Стратегии</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Добавяме малко стил за по-добра четимост */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .card:active { transform: scale(0.98); }
+        .card h3 { margin: 0; color: #2c3e50; font-size: 1.1rem; }
+        .content { display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px; }
+        .content.active { display: block; }
+        #back-button { margin: 10px; padding: 10px 20px; border: none; border-radius: 20px; background: #eee; cursor: pointer; }
+        h4 { color: #e67e22; margin-bottom: 8px; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; line-height: 1.5; }
+
+    </style>
+</head>
+<body>
+
+<button id="back-button" onclick="window.location.href='index.html'">⬅ Назад</button> <br>
+
+<section class="screen active">
+    <h1 data-key="tips_title_main">📚 Образователни издания, анализ и стратегии</h1>
+
+    <div class="highlight-box" style="border-left: 5px solid #f9b007; background: #fff9eb; padding: 15px; border-radius: 10px; margin: 15px 0;">
+        <p style="margin: 0; font-size: 1rem; color: #2c3e50; line-height: 1.5;">
+            ⚠️ <strong data-key="tips_important_label">Важно:</strong> 
+            <span data-key="tips_sugar_rule">5г захар е приемлива за основно хранене, само АКО в чинията имаш:</span>
+        </p>
+        <ul style="margin: 10px 0 0 20px; color: #d35400; font-weight: bold;">
+            <li data-key="tips_sugar_cond1">Поне 20-30г чист протеин</li>
+            <li data-key="tips_sugar_cond2">Обилно количество фибри (зеленчуци)</li>
+        </ul>
+    </div>
+
+    <div class="card" onclick="toggleText('t_juice')" style="border-left-color: #e74c3c;">
+    <h3 data-key="tips_juice_title">🥤 Опасността от натуралния сок</h3>
+    <div id="t_juice" class="content">
+        <p data-key="tips_juice_content">
+            Дори половин чаша натурален сок може да предизвика рязък скок на инсулина. 
+            Тъй като в сока липсват фибрите на целия плод, захарта навлиза в кръвта мигновено.
+        </p>
+        <div class="highlight-box" style="background: #fdeaea;">
+            <strong data-key="tips_juice_warning">⚠️ Златно правило:</strong> 
+            <span data-key="tips_juice_rule">Яжте плода цял, не го пийте на сок!</span>
+        </div>
+    </div>
+</div>
+  
+    <div class="card" onclick="toggleText('t1')">
+        
+        <h3 data-key="tips_balanced_title">🥗 Балансирано хранене</h3>
+        <div id="t1" class="content">
+            <p data-key="t1_content">Балансът в храненето <strong>не блокира изгарянето на мазнини</strong> сам по себе си. Проблемът не е смесването на мазнини и въглехидрати, а количествата.</p>
+            
+            <ul>
+                <li data-key="t1_content1">Когато ядем въглехидрати, инсулинът се покачва и временно спира чистенето на мазнини за
+                     няколко часа.</li>
+                <li data-key="t1_content2"><strong>Лоши примери:</strong> Понички, пица, пържени картофи със сок (комбинация от захар + мазнини).</li>
+                <li data-key="t1_content3"><strong>Добри примери:</strong> Ориз със салата и зехтин, риба с картофи.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t2')">
+        <h3 data-key="tips_fiber_title">🌿 Фибри и хормонален баланс</h3>
+        <div id="t2" class="content">
+            <h4 data-key="t2_content"> Дневна цел: 25–30 г</h4>
+            <ul>
+                <li data-key="t2_content1"><strong>Бобови:</strong> Боб и леща са шампиони по фибри.</li>
+                <li data-key="t2_content2"><strong>Зеленчуци:</strong> Спанак, броколи, аспержи.</li>
+                <li data-key="t2_content3"><strong>Псилиум хуск:</strong> Мощна добавка за изчистване на червата (~9 г на прием).</li>
+            </ul>
+            <p data-key="t2_content4"><em>Важно:</em> Фибрите свързват излишния естроген, помагайки за хормоналния баланс.</p>
+        </div>
+    </div>
+<!-- ---------------------- -->
+    <div class="card" onclick="toggleText('t3')">
+        <h3 data-key="tips_energi_title">⚡ Енергиен срив и тренировки</h3>
+        <div id="t3" class="content">
+            <h4 data-key="t3_content">Фруктозата и метаболизма</h4>
+            <p data-key="t3_content1">Приемът на фруктоза преди тренировка блокира изгарянето на мазнини и потиска растежния хормон.</p>
+            <ul>
+                <li data-key="t3_content2"><strong>Преди тренировка:</strong>Избягвай захар.</li> 
+                <li data-key="t3_content3"><strong>След тренировка:</strong> Сложни въглехидрати като овесени ядки или сладки картофи за възстановяване на гликогена.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t4')">
+        <h3 data-key="tips_stabilize_title">〰️ Как да стабилизираме глюкозата</h3>
+            <div id="t4" class="content">
+                <p data-key="t4_content1_long">
+                    Яжте на 4–6 часа, Как да стабилизирате нивото на глюкозата:
+1. Ред на хранене: Яжте първо фибри (зеленчуци), след това протеини и мазнини и накрая въглехидрати.
+2. „Облечете“ въглехидратите: Никога не яжте плодове или хляб сами – винаги ги комбинирайте с ядки, яйце или сирене.
+3. Оцет преди хранене: Една супена лъжица ябълков оцет в чаша вода преди хранене може да намали скока на захарта с 30%.
+4. Движете се след хранене: 10-15 минути разходка след хранене помага на мускулите да изгорят незабавно излишната глюкоза.
+5. Избягвайте течните захари: Соковете и подсладените кафета причиняват най-голям шок на панкреаса.
+                </p>
+        </div>
+  </div>
+
+    <div class="card" onclick="toggleText('t5')">
+        <h3 data-key="tips_water_title">💧 Истината за приема на вода</h3>
+        <div id="t5" class="content">
+            <h4 data-key="tips_water_formula">Златната формула</h4
+            <ul>
+                <p data-key="t5_content1"><strong>Хипонатремия:</strong> Не прекалявайте (над 8 литра), за да не разредите електролитите си.</p>
+                <p data-key="t5_content2"><strong>Време за пиене:</strong> На малки глътки по време на хранене; големи количества – 30 мин преди или 1 час след ядене.</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t6')">
+        <h3 data-key="tips_sleep_title">😴 Сън и инсулин</h3>
+        <div id="t6" class="content">
+            <p data-key="t6_content1">
+                Липсата на сън повишава инсулина и глада.
+                Целете се в 7-9 часа качествен сън.
+            </p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t7')">
+        <h3 data-key="tips_exercise_title">🏋️‍♂️ Упражнения и инсулин</h3>
+        <div id="t7" class="content">
+            <p data-key="t7_content1">
+                Силовите тренировки активират GLUT4
+                и подобряват инсулиновата чувствителност.
+            </p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t8')">
+        <h3 data-key="tips_fasting_title">⏳ Периодично гладуване</h3>
+        <div id="t8" class="content">
+            <p data-key="t8_content1">
+                16/8 е популярен режим: 16 часа глад, 8 часа хранене.
+                Помага за намаляване на инсулина и изгаряне на мазнини.
+            </p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t9')">
+        <h3 data-key="tips_balanced_title1">⚖️ Балансирано хранене</h3>
+            <div id="t9" class="content">
+                <p data-key="t9_content1_long_text" class="long-text">
+            
+                Балансът в храненето **не блокира изгарянето на мазнини** сам по себе си.
+                Проблемът не е, че смесваме мазнини и въглехидрати, а **колко и какви храни ядем**.
+
+                Когато ядем въглехидрати, инсулинът се покачва.
+                Докато е висок, тялото временно изгаря по-малко мазнини.
+                Но това е за няколко часа, не завинаги. След това процесът продължава нормално.
+
+                Напълняването не става от едно хранене, а от:
+
+                * често преяждане,
+                * много захар и бяло брашно,
+                * липса на движение,
+                * постоянно висок инсулин.
+
+                Не всяка комбинация мазнини + въглехидрати е лоша.
+
+                **Лоши примери:**
+
+                * понички,
+                * пица с бяло тесто,
+                * пържени картофи + сладка напитка,
+                * сладолед.
+
+                Те са едновременно мазни, сладки и много калорични.
+
+                **Нормални примери:**
+
+                * ориз + салата + малко зехтин,
+                * риба + картофи + зеленчуци,
+                * яйца + зеленчуци + малко пълнозърнест хляб.
+
+                Тук храната е по-чиста и количествата са разумни.
+
+                При хора с инсулинова резистентност е по-добре:
+
+                * по-малко въглехидрати,
+                * повече протеин,
+                * умерени мазнини,
+                * по-редки хранения.
+
+                Разделното хранене може да помогне, но **не е задължително правило за всички**.
+
+                Най-важното за отслабване е:
+
+                * общите калории за деня,
+                * достатъчно протеин,
+                * движение,
+                * сън,
+                * по-малко захар и преработени храни.
+
+                С две думи:
+                Не е проблем да сложиш малко мазнина към въглехидрати.
+                Проблем е, когато храната е много мазна, много сладка и в големи количества.
+
+             </p>
+        </div>
+
+    </div>
+    
+
+    <div class="card" onclick="toggleText('t10')">
+        <h3 data-key="tips_insulin_title">⚠️ 🩸 Инсулинова резистентност</h3>
+        <div id="t10" class="content">
+            <p data-key="t10_content">Кръвната захар е последният показател, който се пречупва. Тялото може да крие проблема с години.</p>
+            <ul>
+                <li data-key="t10_content1"><strong>HOMA Index:</strong> Изследвайте инсулин на гладно. Стойности над 7-10 mU/L са сигнал за риск.</li>
+                <li data-key="t10_content2"><strong>Решението:</strong> Силови тренировки (активират GLUT4 без нужда от инсулин) и периодично гладуване.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleText('t11')">
+    <h3 data-key="tips_protein_title">🥚 Протеини и инсулин</h3>
+    <div id="t11" class="content">
+      <p data-key="t11_content1">
+        Протеинът поддържа ситост и не вдига
+        рязко кръвната захар. Добри източници:
+        яйца, риба, пилешко, боб.
+      </p>
+      <p data-key="t11_content2">
+        "При инсулинова резистентност:  * по-малко въглехидрати, * повече протеин, * умерени мазнини,  * по-редки хранения." 
+      </p>
+      <p data-key="t11_content3">
+        Комбиниране: Протеин + Въглехидрат = По-нисък гликемичен индекс. (Например: Ябълка + 10 бадема).
+      </p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleText('t12')">
+    <h3 data-key="tips_fats_title">🥑 Полезни мазнини</h3>
+    <div id="t12" class="content">
+        <p data-key="tips_fats1">Мазнините са гориво за хормоните. Без тях тялото не може да усвои витамини A, D, E и K.</p>
+        <ul>
+            <li data-key="tips_fats2"><strong>Най-добри:</strong> Авокадо, зехтин, сурови ядки, мазна риба.</li>
+            <li data-key="tips_fats3"><strong>Трик:</strong> Комбинирай мазнини с въглехидрати, за да намалиш гликемичния им индекс.</li>
+        </ul>
+        <p data-key="tips_fats4" style="color: #e57165; font-weight: bold;">
+            ⚠️ Избягвай пърженото и маргарина – те блокират работата на инсулина!
+        </p>
+    </div>
+</div>
+
+</section>
+
+<script type="module" src="languages.js?v=1.1"></script>
+<script type="module" src="script.js?v=1.1"></script>
+
+<script>
+    // Тази функция работи независимо от преводите
+    function toggleText(id) {
+        const content = document.getElementById(id);
+        if (content) {
+            // Затваряме всички други отворени карти (по избор, за по-чист вид)
+            document.querySelectorAll('.content').forEach(el => {
+                if (el.id !== id) el.classList.remove('active');
+            });
+            
+            // Превключваме текущата
+            content.classList.toggle('active');
+        }
+    }
+</script>
+
+<script type="module">
+    import { changeLanguage } from './languages.js';
+
+    window.onload = function() {
+        const savedLang = localStorage.getItem("selectedLanguage") || localStorage.getItem("lang") || "bg";
+        
+        try {
+            if (typeof changeLanguage === 'function') {
+                changeLanguage(savedLang);
+            }
+        } catch (e) {
+            console.error("Грешка при превода:", e);
+        }
+    };
+
+
+    window.goToDashboard = function() {
+        window.location.href = "index.html";
+    };
+
+    // Изпълнява се при пълно зареждане
+    window.onload = function() {
+        const savedLang = localStorage.getItem("selectedLanguage") || localStorage.getItem("lang") || "bg";
+        
+        if (typeof changeLanguage === 'function') {
+            changeLanguage(savedLang);
+        }
+    };
+</script>
+
+</body>
+</html>

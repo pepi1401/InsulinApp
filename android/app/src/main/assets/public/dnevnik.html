@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневно Меню</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+
+<body style="background: #f0f2f5; margin: 0; font-family: sans-serif;">
+
+    <a href="index.html" id="back-button" style="text-decoration: none; float: left; color: #2193b0; font-weight: bold;" data-key="back">⬅ Назад</a>
+
+    <div class="header" style="padding: 20px; background: white; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <h2 style="margin: 0; color: #333;" data-key="my_diary1" >🍴 Моят Дневник</h2>
+    </div>
+
+    <div class="card" style="margin: 20px; padding: 20px; background: white; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 5px solid #2ecc71;">
+        <h4 style="margin: 0 0 15px 0; color: #2ecc71; text-align: center;" data-key="my_diary2" >🍽️ Общо от храненията</h4>
+        
+        <div style="text-align: center; margin-bottom: 15px;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: #333;">
+                <span id="kcal-count">0</span> <small style="font-size: 0.9rem; color: #999;">kcal</small>
+            </div>
+            <div style="background: #eee; border-radius: 10px; height: 6px; overflow: hidden; width: 80%; margin: 5px auto;">
+                <div id="kcal-bar" style="width: 0%; height: 100%; background: #2ecc71; transition: width 0.5s;"></div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
+            <div>
+                <small style="color: #999;" data-key="my_diari2_1">🍬 Захар</small><br>
+                <strong id="sugar-count">0</strong><small>g</small>
+                <div style="background: #eee; height: 4px; border-radius: 5px; margin-top: 5px;"><div id="sugar-bar" style="width:0%; height:100%; background:#2ecc71;"></div></div>
+            </div>
+            <div>
+                <small style="color: #999;" data-key="my_diari2_2">🥩 Прот.</small><br>
+                <strong id="prot-count">0</strong><small>g</small>
+                <div style="background: #eee; height: 4px; border-radius: 5px; margin-top: 5px;"><div id="prot-bar" style="width:0%; height:100%; background:#3498db;"></div></div>
+            </div>
+            <div>
+                <small style="color: #999;" data-key="my_diari2_3">🥑 Мазн.</small><br>
+                <strong id="fat-count">0</strong><small>g</small>
+                <div style="background: #eee; height: 4px; border-radius: 5px; margin-top: 5px;"><div id="fat-bar" style="width:0%; height:100%; background:#f1c40f;"></div></div>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 20px; padding: 20px; background: white; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 5px solid #3498db;">
+            <h4 style="margin: 0 0 15px 0; color: #3498db; text-align: center;" data-key="my_diary3">📝 Хранителен дневник</h4>
+            
+            <div id="daily-log-container">
+                <p style="text-align: center; color: #999;" data-key="my_diary4">Все още не сте добавили никакви хранения за днес.</p>
+            </div>
+        </div>
+    </div>
+
+        <button onclick="clearMealStats()" style="width:100%; background: none; color: #2ecc71; border: 1px solid #2ecc71;
+         padding: 5px; border-radius: 10px; font-size: 0.75em; cursor: pointer; margin-top: 10px; opacity: 0.7;" data-key="my_diary5">
+            🗑️ Нулирай храненията
+        </button>
+    </div>
+
+    <div style="padding: 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <button class="meal-btn" onclick="openMeal('zakuska')" data-key="my_diary6">🌅 Закуска</button>
+        <button class="meal-btn" onclick="openMeal('pred_objad')" data-key="my_diary7">🍏 Преди обед</button>
+        <button class="meal-btn" onclick="openMeal('objad')" data-key="my_diary8">🍱 Обяд</button>
+        <button class="meal-btn" onclick="openMeal('sledobjad')" data-key="my_diary9">☕ Следобяд</button>
+        <button class="meal-btn" onclick="openMeal('vecherja')" style="grid-column: span 2;" data-key="my_diary10">🌙 Вечеря</button>
+    </div>
+
+    <div style="padding: 0 20px 20px 20px;">
+    <div id="reader" style="width: 100%; max-width: 400px; margin: 0 auto; border-radius: 10px; overflow: hidden;"></div>
+
+        <p id="scan-status" style="text-align:center; font-weight:bold; margin-top:10px;"></p>
+
+        <div style="text-align:center; margin-top:10px;">
+            <button id="start-scan-btn" onclick="startScanner()" class="meal-btn" style="background:rgb(4, 239, 94); text-align: center;" data-key="my_diary11">📷 СКЕНИРАЙ БАРКОД</button>
+            <button id="stop-scan-btn" onclick="stopScanner()" class="meal-btn" style="display:none; background:rgb(174, 168, 168);" data-key="my_diary12">🛑 Спри Скенер</button>
+    </div>
+    
+</div>
+
+   <div id="scan-results" style="display:none; background:#f9f9f9; padding:20px; border-radius:20px; margin:20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <h3 id="res-name" style="text-align:center; color:#2193b0; margin-bottom:15px;" data-key="my_diary17">Име на продукт</h3>
+    
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+        <div style="background:white; padding:10px; border-radius:10px; border-left:4px solid #e74c3c;" data-key="my_diari2_1"><small>🍬 Захар</small><br><span id="res-sugar">0</span>g</div>
+        <div style="background:white; padding:10px; border-radius:10px; border-left:4px solid #2ecc71;" data-key="my_diari2_2"><small>🥩 Протеин</small><br><span id="res-prot">0</span>g</div>
+        <div style="background:white; padding:10px; border-radius:10px; border-left:4px solid #3498db;" data-key="my_diari2_3"><small>🥑 Мазнини</small><br><span id="res-fat">0</span>g</div>
+        <div style="background:white; padding:10px; border-radius:10px; border-left:4px solid #34495e;"><small>Kcal</small><br><span id="res-kcal">0</span></div>
+    </div>
+
+    <div id="meal-selection-area" style="margin-top: 20px; display: none; border-top: 1px solid #ddd; padding-top: 15px;">
+        <p style="text-align:center; font-weight: bold; font-size: 0.9rem; color: #333; margin-bottom: 10px;" data-key="my_diary13">Къде да добавя продукта?</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button onclick="selectTypeAndAdd('zakuska')" class="meal-btn-small" style="background:#f39c12;" data-key="my_diary6">🌅 Закуска</button>
+            <button onclick="selectTypeAndAdd('pred_objad')" class="meal-btn-small" style="background:#27ae60;" data-key="my_diary7">🍏 Преди обед</button>
+            <button onclick="selectTypeAndAdd('objad')" class="meal-btn-small" style="background:#2980b9;" data-key="my_diary8">🍱 Обяд</button>
+            <button onclick="selectTypeAndAdd('sledobjad')" class="meal-btn-small" style="background:#8e44ad;" data-key="my_diary9">☕ Следобяд</button>
+            <button onclick="selectTypeAndAdd('vecherja')" class="meal-btn-small" style="grid-column: span 2; background:#a99290;" data-key="my_diary10">🌙 Вечеря</button>
+        </div>
+    </div>
+
+    <style>
+        .meal-btn-small { border:none; color:white; padding:12px; border-radius:12px; font-size:0.85rem; cursor:pointer; font-weight:bold; transition: opacity 0.2s; }
+        .meal-btn-small:active { opacity: 0.7; }
+    </style>
+</div>
+
+     <div id="meal-modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000;">
+        <div style="background:white; margin:10% auto; width:90%; padding:20px; border-radius:20px; max-height: 80vh; overflow-y: auto;">
+            <h3 id="modal-title" data-key="my_diary14">Добавяне на храна</h3>
+            <input type="text" id="food-search" data-key="my_diary15" onkeyup="searchFood()" placeholder="Търсене на храна...">
+
+            <div id="search-results"></div>
+            <div id="food-list" style="margin-top: 15px;"></div>
+            <button onclick="closeMeal()" style="width:100%; margin-top:20px; padding:10px; border:none; background:#eee; border-radius:10px;" data-key="my_diary16">Затвори</button>
+        </div>
+    </div>
+
+   
+
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof updateProgressBar === "function") { updateProgressBar(); }
+        });
+    </script>
+
+    <script type="module">
+        import { translations } from './languages.js';
+        
+        window.applyTranslations = function() {
+            const lang = localStorage.getItem("lang") || "bg";
+            const langData = translations[lang];
+            if (!langData) return;
+
+            document.querySelectorAll("[data-key]").forEach(el => {
+                const key = el.getAttribute("data-key");
+                if (langData[key]) {
+                    if (el.tagName === "INPUT") {
+                        el.placeholder = langData[key];
+                    } else {
+                        el.innerHTML = langData[key];
+                    }
+                }
+            });
+        };
+
+        // Извикваме го и при DOMContentLoaded, и при Window Load за застраховка
+        document.addEventListener("DOMContentLoaded", window.applyTranslations);
+        window.addEventListener("load", window.applyTranslations);
+    </script>
+   
+   
+    <script type="module" src="dnevnik.js?v=1.1"></script>
+    <script type="module" src="languages.js?v=1.1"></script>
+
+<!-- ZA MENE E SAMO -->
+    <section id="add-food" class="screen" style="display:none;">
+        <h3>Продуктът не е намерен. Добави го:</h3>
+        <input type="text" id="new-product-barcode" readonly>
+        <input type="text" id="new-product-name" placeholder="Име">
+        <input type="number" id="new-product-kcal" placeholder="Калории">
+        <input type="number" id="new-product-sugar" placeholder="Захар">
+        <input type="number" id="new-product-prot" placeholder="Протеин">
+        <input type="number" id="new-product-fat" placeholder="Мазнини">
+        <button onclick="saveProductLocally()" style="width:100%; padding:15px; background:#2ecc71; color:white; border:none; border-radius:10px; font-weight:bold; margin-top:10px;">ЗАПАЗИ</button>
+    </section>
+    
+</body>
+</html>

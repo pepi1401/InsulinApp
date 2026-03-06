@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #back-button {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        width: 25%;
+        background: #eee;
+        border: none;
+        padding: 12px;
+        border-radius: 20px 20px 20px 20px; /* Заобляме само долните ъгли */
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: block;
+    }
+    
+    /* Оправяме инпутите да не са залепени един за друг */
+    .profile-grid input, .profile-grid select {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+</style>
+</head>
+<body>
+
+    <!-- <div id="weight-list"></div> -->
+    <section  class="screen active" style="display:block; padding: 10px; background-color: #b2e0eb;">
+
+        <button id="back-button" onclick="window.location.href='index.html'">⬅ Назад</button> 
+        
+       <h2 style="text-align:center; color: #053540;" data-key="w_unit1">⚖️ Моето Тегло</h2>
+        
+    <div style="background:white; padding:15px; border-radius:15px; margin-bottom:15px; box-shadow:0 2px 5px rgba(0,0,0,0.2);">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <select id="user-gender" style="padding:5px;">
+                <option value="female" data-key="w_unit2">Жена</option><option value="male" data-key="w_unit3">Мъж</option></select>
+            <input type="number" id="user-age" data-key="w_unit4" placeholder="Години">
+            <input type="number" id="user-height" data-key="w_unit5" placeholder="Ръст (см)">
+            <input type="number" id="target-weight" data-key="w_unit6" placeholder="Цел (кг)">
+
+            
+        </div>
+            <button onclick="saveProfile()" style="width:100%; margin-top:10px; background:#2193b0; color:white; border:none; padding:10px; border-radius:10px;" data-key="w_unit7">Обнови Профила</button>
+        </div>
+
+        <!-- списъкът с теглото -->
+    <div id="weight-list" style="margin-top:20px;"></div>
+
+    <div style="background:white; padding:15px; border-radius:15px; display:flex; gap:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <input type="number" id="weight-input" data-key="w_unit8" placeholder="Тегло (кг)" step="0.1" style="flex:2; padding:10px;">
+        <button onclick="saveWeight()" style="flex:1; background:#27ae60; color:white; border:none; border-radius:10px;" data-key="w_unit9">Запиши</button>
+    </div>
+
+    <div id="ad-container" style="width: 100%; text-align: center; margin-top: 20px; padding: 10px; background: #fff; border-radius: 15px; border: 1px dashed #ccc;">
+        <p style="font-size: 10px; color: #999; margin-bottom: 5px;">РЕКЛАМА</p>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        
+    </div>
+
+    <div id="chart-container" style="display:none; background:white; padding:10px; border-radius:15px; margin-top:15px; height:250px;">
+        <canvas id="weightChart"></canvas>
+    </div>
+
+    <div id="chart-container style="margin-top:20px;"><canvas id="weightChart"></canvas></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="module" src="script.js?v=1.1"></script>
+<script type="module" src="weight.js?v=1.1"></script>
+<script type="module" src="languages.js?v=1.1"></script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "appId": "com.insulin.app",
+  "appName": "InsulinApp",
+  "webDir": "www", 
+  "bundledWebRuntime": false
+}

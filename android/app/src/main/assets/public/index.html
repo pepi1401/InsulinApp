@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Insulin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="login-screen" class="screen active">
+        <div class="lang-grid">
+            <button onclick="changeLanguage('bg')">BG</button>
+            <button onclick="changeLanguage('mk')">MK</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('de')">DE</button>
+            <button onclick="changeLanguage('sr')">SR</button>
+            <button onclick="changeLanguage('hr')">HR</button>
+        </div>
+
+        <div class="login-box">
+            <img src="icon.png" alt="Logo" class="main-logo">
+            <h1 data-key="welcome">Добре дошли</h1>
+            <input type="email" id="email-field" data-key="emailPlaceholder" placeholder="Въведете имейл">
+            <button onclick="login()" class="login-btn" data-key="login">Вход</button>
+        </div>
+    </section>
+
+    <!-- SLED LOGIRANE -->
+    <section id="dashboard" class="screen" style="display:none; background-color: aquamarine;">
+        <div class="header-info">
+            <h2 class="main-title-small" style="text-align: center;" data-key="name1">БАЛАНС ИНСУЛИНА</h2>
+        </div>
+
+        <nav class="compact-grid">
+            <a href="dnevnik.html" class="menu-item diary-btn">
+                <span class="icon">🍴</span>
+                <span data-key="diary">ДНЕВНИК & СКЕНЕР</span>
+            </a>
+
+            <a href="recepti.html" class="menu-item">
+                <span class="icon">🥗</span>
+                <span data-key="recipes" style="font-size: 1rem; font-weight: bold; display: block; text-align: center;">РЕЦЕПТИ</span>
+            </a>
+
+            <a href="hrana.html" class="menu-item">
+                <span class="icon">🍎</span>
+                <span data-key="food" style="font-size: 1rem; font-weight: bold; display: block; text-align: center;">ХРАНА & ГЛЮКОЗА</span>
+            </a>
+
+            <a href="workouts.html" class="menu-item">
+                <span class="icon">💪</span>
+                <span data-key="workouts" style="font-size: 1rem; font-weight: bold; display: block; text-align: center;">ТРЕНИРОВКИ</span>
+            </a>
+
+            <a href="weight.html" class="menu-item">
+                <span class="icon">⚖️</span>
+                <span data-key="weight" style="font-size: 1rem; font-weight: bold; display: block; text-align: center;">КИЛОГРАМИ</span>
+            </a>
+
+            <a href="saveti.html" class="menu-item" >
+                <span class="icon">📚</span>
+                <span data-key="nav_tips" style="font-size: 1rem; font-weight: bold; display: block; text-align: center;">СЪВЕТИ</span>
+            </a>
+        </nav>
+        <!-- PREDIZVIK I SAVET NA DEN -->
+         
+           
+
+            <div class="daily-card advice-card">
+                <span class="card-icon">💡</span>
+                <div class="card-content">
+                    <h4 data-key="title_advice">СЪВЕТ НА ДЕНЯ</h4>
+                    <p id="daily-advice-text" data-key="tex1">Започни деня с чаша топла вода.</p>
+                </div>
+            </div>
+
+            <div class="daily-card challenge-card">
+                <span class="card-icon">🏆</span>
+                <div class="card-content">
+                    <h4 data-key="title_challenge">Дневен предизвик</h4>
+                    <p id="daily-challenge-text" data-key="tex01">10 000 крачки днес!</p>
+                </div>
+            </div>
+            
+           
+
+        <button onclick="logout()" class="logout-btn-link" data-key="logout" style="background-color: rgb(39, 39, 82);">⬅️ ИЗХОД</button>
+    </section>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="languages.js?v=1.1"></script>
+</body>
+</html>
